@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div>
+            <h1>Employee Management</h1>
+            <p>Manage your company employees in one place</p>
+        </div>
+        <span class="header-icon">EMS</span>
+    </header>
+
+    <main class="container">
+
+        <section class="stats">
+            <div class="stat-card">
+                <p>Total Employees</p>
+                <h2 id="totalEmployees">0</h2>
+            </div>
+            <div class="stat-card">
+                <p>Departments</p>
+                <h2 id="totalDepartments">0</h2>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Add New Employee</h2>
+            <p class="section-description">Enter the employee information below.</p>
+
+            <form id="employeeForm">
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="employeeId">Employee ID</label>
+                        <input type="text" id="employeeId" placeholder="EMP001" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="employeeName">Full Name</label>
+                        <input type="text" id="employeeName" placeholder="Enter full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="employee@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <select id="department" required>
+                            <option value="">Select department</option>
+                            <option value="IT">IT</option>
+                            <option value="HR">HR</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Operations">Operations</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="position">Job Position</label>
+                        <input type="text" id="position" placeholder="Software Developer" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="salary">Monthly Salary (₹)</label>
+                        <input type="number" id="salary" placeholder="25000" min="0" step="0.01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="joiningDate">Joining Date</label>
+                        <input type="date" id="joiningDate" required>
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="reset" class="btn btn-secondary">
+                        Clear Form
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        + Add Employee
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="employees-section">
+            <div class="table-heading">
+                <div>
+                    <h2>Employee Records</h2>
+                    <p class="section-description">
+                        View and manage your employees.
+                    </p>
+                </div>
+
+                <input type="search" id="searchInput" placeholder="Search employees...">
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Position</th>
+                            <th>Salary</th>
+                            <th>Joining Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeTableBody"></tbody>
+                </table>
+            </div>
+
+            <p id="emptyMessage" class="empty-message">
+                No employees added yet. Add your first employee above.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Employee Management System | AWS Learning Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
